@@ -54,6 +54,8 @@ int main() {
  2. Znajdź element najmniejszy i największy w tablicy */
 
 float srednia(int tab[], int rozmiar);
+int maksimum(int tab[], int rozmiar);
+int minimum(int tab[], int rozmiar);
 
 int main() {
     random_device rd;
@@ -72,6 +74,10 @@ int main() {
     }
 
     cout << "Srednia wartosc liczb w tablicy wynosi: " << srednia(tab, 10) << endl;
+	cout << "Najmniejszy element w tablicy to: " << minimum(tab, 10) << endl;
+	cout << "Najwiekszy element w tablicy to: " << maksimum(tab, 10) << endl;
+
+
 
 }
 
@@ -81,4 +87,24 @@ float srednia(int tab[], int rozmiar) {
         suma += tab[i];
     }
     return suma / rozmiar;
+}
+
+int maksimum(int tab[], int rozmiar) {
+    int maks = tab[0];
+    for (int i = 1; i < rozmiar; ++i) {
+        if (tab[i] > maks) {
+            maks = tab[i];
+        }
+    }
+    return maks;
+}
+
+int minimum(int tab[], int rozmiar) {
+    int min = tab[0];
+    for (int i = 1; i < rozmiar; ++i) {
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+    }
+    return min;
 }
