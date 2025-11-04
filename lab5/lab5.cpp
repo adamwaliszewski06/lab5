@@ -197,4 +197,6 @@ int minimum(int tab[], int rozmiar) {
 }
 */
 
-/* zad 6 - */
+/* zad 6 - Napisz program, który wypełni 10-elementową tablicę liczbami pseudolosowymi z przedziału od 0 do 10.
+ Następnie, program losuje ”szczęśliwą liczbę” z tego samego przedziału i sprawdza ile razy wylosowana liczba
+ występuje w tablicy */
