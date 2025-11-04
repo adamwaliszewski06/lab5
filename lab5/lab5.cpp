@@ -134,4 +134,67 @@ int main() {
 /* zad 5 - Napisz program, który pozwala użytkownikowi na wprowadzenie n liczb rzeczywistych do tablicy 10
 elementowej, gdzie n jest z zakresu [0,10]. Jeśli użytkownik wprowadzi mniej niż 10 liczb, to dopełnij tablicę
  zerami (przykładowo jeśli użytkownik poda 4 liczby, to 6 pozostałych elementów tablicy przyjmuje wartość 0).
- Dla tak przygotowanej tablicy oblicz wartość średnią, maksymalną i minimalną */
+ Dla tak przygotowanej tablicy oblicz wartość średnią, maksymalną i minimalną 
+
+float srednia(int tab[], int rozmiar);
+int maksimum(int tab[], int rozmiar);
+int minimum(int tab[], int rozmiar);
+
+int main() {
+    int tab[10];
+    int n, liczba;
+	cout << "Ile liczb chcesz wprowadzic (0-10): ";
+	cin >> n;
+
+    for (int i = 0; i < n; i++) { 
+        cout << "Wprowadz " << i + 1 << " liczbe: ";
+        cin >> liczba;
+        tab[i] = liczba;
+    }
+
+    for (int i = n; i < 10; i++) { 
+        tab[i] = 0;
+	}
+
+    for (int i = 0; i < 10; i++) {
+        cout << tab[i] << endl;
+    }
+
+	cout << endl;
+    cout << "Srednia wartosc liczb w tablicy wynosi: " << srednia(tab, 10) << endl;
+    cout << "Najmniejszy element w tablicy to: " << minimum(tab, 10) << endl;
+    cout << "Najwiekszy element w tablicy to: " << maksimum(tab, 10) << endl;
+
+    return 0;
+}
+
+float srednia(int tab[], int rozmiar) {
+    int suma = 0;
+    for (int i = 0; i < rozmiar; ++i) {
+        suma += tab[i];
+    }
+    return suma / rozmiar;
+}
+
+int maksimum(int tab[], int rozmiar) {
+    int maks = tab[0];
+    for (int i = 1; i < rozmiar; ++i) {
+        if (tab[i] > maks) {
+            maks = tab[i];
+        }
+    }
+    return maks;
+}
+
+int minimum(int tab[], int rozmiar) {
+    int min = tab[0];
+    for (int i = 1; i < rozmiar; ++i) {
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+    }
+    return min;
+}
+*/
+
+/* zad 6 - */
