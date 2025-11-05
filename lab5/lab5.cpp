@@ -254,7 +254,7 @@ int main() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             cout << tab1[i][j] << " ";
-        }
+        } 
         cout << endl;
     }
 
@@ -300,7 +300,7 @@ int main() {
 
 */
 
-/* zad 8 - Napisz program mnozenia macierzy kwadratowych(wykorzystaj tablice dwuwymiarowe) */
+/* zad 8 - Napisz program mnozenia macierzy kwadratowych(wykorzystaj tablice dwuwymiarowe) 
 int main() {
     random_device rd;
     mt19937 gen(rd());
@@ -333,7 +333,7 @@ int main() {
         for (int j = 0; j < 3; j++) {
             cout << tab2[i][j] << " ";
         }
-        cout << endl; 
+        cout << endl;
     }
 
     for (int i = 0; i < 3; i++) {
@@ -350,4 +350,88 @@ int main() {
         cout << endl;
     }
     return 0;
+}
+
+*/
+
+/* zad 9 - Napisz program, który dla zadanej przez użytkownika macierzy kwadratowej wyznaczy sumę liczb na
+głównej przekątnej. */
+
+int main() {
+    int tab1[3][3], tab2[3][3], suma_przekatnej[3];
+
+    cout << "Wprowadz elementy pierwszej macierzy 3x3: " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "Element [" << i << "][" << j << "]: ";
+            cin >> tab1[i][j];
+        }
+    }
+    cout << "Wprowadz elementy drugiej macierzy 3x3: " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "Element [" << i << "][" << j << "]: ";
+            cin >> tab2[i][j];
+        }
+    }
+
+    cout << "Macierz 1:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab1[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Macierz 2:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab2[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+
+    for (int i = 0; i < 3; i++) {
+        suma_przekatnej[i] = tab1[i][i] + tab2[i][i]; // sumuje elementy [1][1], [2][2], [3][3]
+    }
+
+    cout << "Suma przekatnych macierzy: " << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << suma_przekatnej[i] << " ";
+    }
+
+    return 0;
+}
+
+/* zad 10 z macierzami o dowolnej wielkości*/
+main ) {
+    int suma_przekatnej[3];
+    int** tab1, tab2;
+    int d; // wymiar macierzy kwadratowej
+    cout << "Podaj liczbe wierszy macierzy (rownowazna z liczba kolumn): ";
+    cin >> w;
+
+    int** tab1 = new int* [w]; //przydzielenie pamięci na okreslona liczbe wierszy
+    int** tab2 = new int* [w];
+
+    for (int i = 0; i < w; i++){
+        tab1[i] = new int[w]; //przydzielenie dla każdego wiersza po k komórek
+        tab2[i] = new int[w];
+    }
+
+    for (int i = 0; i < w; i++) { //dla kazdego wiersza
+        for (int j = 0; j < k; j++) { //dla kazdej kolumny
+            cout << "Podaj element macierzy 1 na pozycji [" << i << "][" << j << "]: ";
+            cin >> macierz[i][j];
+        }
+    }
+    cout << "Wprowadzona macierz 1 :  " << endl;
+    for (int i = 0; i < w; i++) {
+        for (int j = 0; j < k; j++) {
+            cout << macierz[i][j] << " ";
+        }
+        cout << endl; //po wypisaniu kazdego wiersza przechodzi do nowej linii
+    }
 }
