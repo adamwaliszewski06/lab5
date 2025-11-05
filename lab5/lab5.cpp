@@ -199,4 +199,155 @@ int minimum(int tab[], int rozmiar) {
 
 /* zad 6 - Napisz program, który wypełni 10-elementową tablicę liczbami pseudolosowymi z przedziału od 0 do 10.
  Następnie, program losuje ”szczęśliwą liczbę” z tego samego przedziału i sprawdza ile razy wylosowana liczba
- występuje w tablicy */
+ występuje w tablicy 
+
+int main() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> dist(0, 10);
+
+    int tab[10];
+    int lucky_number, counter= 0;
+
+    for (int i = 0; i < 10; ++i) {
+        tab[i] = dist(gen);
+    }
+
+    lucky_number = dist(gen);
+
+    for (int i = 0; i < 10; ++i) {
+        if (tab[i] == lucky_number) {
+            counter++;
+        }
+	}
+
+    for (int i = 0; i < 10; ++i) {
+        cout << "tab[" << i << "] = " << tab[i] << "    " << endl;
+    }
+	cout << "Szczesliwa liczba to : " << lucky_number << endl;     cout << "Szczesliwa liczba wystepuje w tablicy " << counter << " razy." << endl;
+	return 0;
+}
+*/
+
+/* zad 7 - Napisz program dodawania macierzy kwadratowych(wykorzystaj tablice dwuwymiarowe)
+
+int main() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> dist(0, 50);
+
+    int tab1[3][3], tab2[3][3], suma[3][3];
+   
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            tab1[i][j] = dist(gen);
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            tab2[i][j] = dist(gen);
+        }
+    }
+
+    cout << "Macierz 1:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab1[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Macierz 2:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab2[i][j] << " ";
+        }
+        cout << endl; //po wypisaniu kazdego wiersza przechodzi do nowej linii
+    }
+    
+   // cout << "Wprowadz elementy pierwszej macierzy 3x3: " << endl;
+  //  for (int i = 0; i < 3; i++) {
+    //    for (int j = 0; j < 3; j++) {
+       //     cout << "Element [" << i << "][" << j << "]: ";
+      //      cin >> tab1[i][j];
+     //   }
+  //  }
+   // cout << "Wprowadz elementy drugiej macierzy 3x3: " << endl;
+   // for (int i = 0; i < 3; i++) {
+    //    for (int j = 0; j < 3; j++) {
+      //      cout << "Element [" << i << "][" << j << "]: ";
+     //       cin >> tab2[i][j];
+     //   }
+ //   }
+    
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+			suma[i][j] = tab1[i][j] + tab2[i][j]; //zawartość komórki to suma odpowiadających sobie komórek z tab1 i tab2
+        }
+    }
+    
+    cout << "Suma macierzy: " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << suma[i][j] << " ";
+        }
+        cout << endl;
+    }
+	return 0;
+}
+
+*/
+
+/* zad 8 - Napisz program mnozenia macierzy kwadratowych(wykorzystaj tablice dwuwymiarowe) */
+int main() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> dist(0, 50);
+
+    int tab1[3][3], tab2[3][3], iloczyn[3][3];
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            tab1[i][j] = dist(gen);
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            tab2[i][j] = dist(gen);
+        }
+    }
+
+    cout << "Macierz 1:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab1[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Macierz 2:  " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << tab2[i][j] << " ";
+        }
+        cout << endl; 
+    }
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            iloczyn[i][j] = tab1[i][j] * tab2[i][j];
+        }
+    }
+
+    cout << "Iloczyn macierzy: " << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << iloczyn[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
