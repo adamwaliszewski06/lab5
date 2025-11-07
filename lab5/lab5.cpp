@@ -406,7 +406,7 @@ int main() {
 }
 */
 
-/* zad 9 z macierzami o dowolnej wielkości d x d*/
+/* zad 9 z macierzami o dowolnej wielkości d x d
 int main() {
     int suma_przekatnej[3];
     int** tab1;
@@ -462,3 +462,43 @@ int main() {
 
     return 0;
 }
+*/
+
+/* zad 10 - Napisz program, który posortuje rosnąco tablicę 10 liczb całkowitych 
+(tablica zadana przez użytkownika). Wskazówka: porównaj dwa elementy i jeśli trzeba to zmień je miejscami. */
+
+
+
+int main() {
+    int tab[10];
+
+    for (int i = 0; i < 10; i++) { 
+            cout << "Podaj element tablicy 1 na pozycji [" << i << "]: ";
+            cin >> tab[i];
+    }
+    cout << "Wprowadzona tablica:  " << endl;
+    for (int i = 0; i < 10; i++) {
+            cout << tab[i] << " ";
+    }
+
+    // porownywanie i zamiana miejscami elementow tablicy - bubble sort
+    const int N = 10;
+	for (int pass = 0; pass < N - 1; ++pass) { //zabezpieczenie przed przekroczeniem zakresu tablicy
+        for (int i = 0; i < N - 1 - pass; ++i) {
+            if (tab[i] > tab[i + 1]) {
+                if (tab[i] > tab[i + 1]) {  // jesli element jest wiekszy od nastepnego 
+                    int store = tab[i]; //przcechowaj wartosc wiekszego elementu
+                    tab[i] = tab[i + 1]; //przypisz mniejszy element na miejsce wiekszego
+                    tab[i + 1] = store; //przypisz wiekszy element na miejsce mniejszego
+                }
+            }
+        }
+    }
+       
+	cout << endl << "Posortowana tablica:  " << endl;
+        for (int i = 0; i < 10; i++) {
+                cout << tab[i] << " ";
+        }
+        return 0;
+
+    }
