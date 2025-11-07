@@ -406,7 +406,7 @@ int main() {
 }
 */
 
-/* zad 10 z macierzami o dowolnej wielkości*/
+/* zad 9 z macierzami o dowolnej wielkości d x d*/
 int main() {
     int suma_przekatnej[3];
     int** tab1;
